@@ -1,6 +1,11 @@
 <?php 
 session_start(); 
 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) { 
+    header('Location: dashboard.php'); 
+    exit; 
+}
+
 define('USUARIO_CORRECTO', 'admin'); 
 define('PASSWORD_CORRECTO', '12345'); 
 
